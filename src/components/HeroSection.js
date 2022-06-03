@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { Button } from './Button';
+import { Link } from 'react-router-dom';
 import './HeroSection.css';
 
 function HeroSection() {
@@ -10,13 +11,14 @@ function HeroSection() {
       <h1>ADVENTURE AWAITS</h1>
       <p>What are you waiting for?</p>
       <div className='hero-btns'>
-        <Button
+        <Link
+          to="/contact"
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
           GET STARTED
-        </Button>
+        </Link>
         <Button
           className='btns'
           buttonStyle='btn--primary'
