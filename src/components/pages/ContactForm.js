@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 // import { toast } from 'react-toastify';
 import './ContactForm.css';
 function ContactForm() {
@@ -13,7 +13,7 @@ function ContactForm() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (cform.service == "") {
+    if (cform.service === "") {
       alert("Please select a service");
     } else if (!(/^[a-zA-Z ]+$/.test(cform.cname))) {
       alert("Please enter a valid name");
@@ -22,9 +22,9 @@ function ContactForm() {
     } else if (!(/^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/.test(cform.phone))) {
       alert("Please enter a valid Number");
     } else if (!cform.Address) {
-      alert("Please check the Address");
-    } else if (!cform.Address) {
-      alert("Address is required");
+      alert("Please enter the Address");
+    } else if (!cform.cMsg) {
+      alert("Message is required");
     } else {
       //service call here
       alert("Your query submitted successfully.");
@@ -77,8 +77,8 @@ function ContactForm() {
                   </div>
                 </div>
 
-                <label htmlFor="cAddress" className="sr-only">Address</label>
-                <textarea className="form-control" onChange={(e) => setCform({ ...cform, Address: e.target.value })} cols="30" rows="4" id="cAddress" required placeholder="Brief About Service"></textarea>
+                <label htmlFor="cMsg" className="sr-only">Message</label>
+                <textarea className="form-control" onChange={(e) => setCform({ ...cform, message: e.target.value })} cols="30" rows="4" id="cMsg" required placeholder="Brief About Service"></textarea>
 
                 <button type="submit" className="btn btn-outline-primary-2 btn-minwidth-sm">
                   <span>SUBMIT</span>
