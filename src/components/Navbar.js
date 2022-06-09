@@ -50,7 +50,7 @@ function Navbar() {
                 Services
               </Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/products'
                 className='nav-links'
@@ -58,9 +58,9 @@ function Navbar() {
               >
                 Products
               </Link>
-            </li>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link
                 to='/sign-up'
                 className='nav-links-mobile'
@@ -68,9 +68,9 @@ function Navbar() {
               >
                 Sign Up
               </Link>
-            </li>
+            </li> */}
           </ul>
-          {button && <Button path='/sign-up' buttonStyle='btn--outline'>SIGN UP</Button>}
+          {/* {button && <Button path='/sign-up' buttonStyle='btn--outline'>SIGN UP</Button>} */}
         </div>
       </nav>
     </>

@@ -42,43 +42,57 @@ function ContactForm() {
               <h2 className="title mb-2">Contact Us</h2>
 
               <form id="contact" onSubmit={submitForm} className="contact-form mb-3">
+
+
+                <h4> &nbsp; Service Details &nbsp; </h4>
+
                 <div className="row">
                   <div className="col-sm-6">
-                    <label htmlFor="cname" className="sr-only">Select Service</label>
+                    <label htmlFor="cname">Select Service</label>
                     <select className="form-control" onChange={(e) => setCform({ ...cform, service: e.target.value })} required>
                       <option value="">Select Service</option>
-                      <option value="Wiring">Wiring</option>
+                      <option value="Wiring">Electrical Wiring</option>
                       <option value="Profile Installation">Profile Installation</option>
                       <option value="Chandlers Installation">Chandlers Installation</option>
                     </select>
                   </div>
+
+                  <div className="col-sm-6">
+                    <label htmlFor="dateOfService">Date of Service</label>
+                    <input type="date" title="Provide Date of service" onChange={(e) => setCform({ ...cform, email: e.target.value })} className="form-control" id="dateOfService" placeholder="DD/MM/YYYY" required />
+                  </div>
+
                 </div>
+
+                <label htmlFor="cMsg">Message</label>
+                <textarea className="form-control" onChange={(e) => setCform({ ...cform, message: e.target.value })} cols="30" rows="4" id="cMsg" required placeholder="Brief info about Service you want to render"></textarea>
+
+                <h4> &nbsp; Contact Details &nbsp; </h4>
+
                 <div className="row">
                   <div className="col-sm-6">
-                    <label htmlFor="cname" className="sr-only">Name</label>
+                    <label htmlFor="cname">Name</label>
                     <input type="text" pattern="[A-Za-z\s]+" title="letters only" onChange={(e) => setCform({ ...cform, cname: e.target.value })} className="form-control" id="cname" placeholder="Name *" required />
                   </div>
 
                   <div className="col-sm-6">
-                    <label htmlFor="cemail" className="sr-only">Email</label>
+                    <label htmlFor="cemail">Email</label>
                     <input type="email" title="Provide Valid Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onChange={(e) => setCform({ ...cform, email: e.target.value })} className="form-control" id="cemail" placeholder="Email *" required />
                   </div>
                 </div>
 
                 <div className="row">
+
                   <div className="col-sm-6">
-                    <label htmlFor="cphone" className="sr-only">Phone</label>
+                    <label htmlFor="cphone">Phone</label>
                     <input type="tel" maxLength={10} pattern="[0-9]+" title="Mobile should be only numerics" onChange={(e) => setCform({ ...cform, phone: e.target.value })} className="form-control" id="cphone" placeholder="Phone" />
                   </div>
 
                   <div className="col-sm-6">
-                    <label htmlFor="cAddress" className="sr-only">Address</label>
+                    <label htmlFor="cAddress">Address</label>
                     <input type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.\s]{5,30}$" title="Alphanumeric 6 to 30 characters only" onChange={(e) => setCform({ ...cform, Address: e.target.value })} className="form-control" id="cAddress" placeholder="Address" />
                   </div>
                 </div>
-
-                <label htmlFor="cMsg" className="sr-only">Message</label>
-                <textarea className="form-control" onChange={(e) => setCform({ ...cform, message: e.target.value })} cols="30" rows="4" id="cMsg" required placeholder="Brief About Service"></textarea>
 
                 <button type="submit" className="btn btn-outline-primary-2 btn-minwidth-sm">
                   <span>SUBMIT</span>
@@ -86,8 +100,6 @@ function ContactForm() {
               </form>
             </div>
           </div>
-
-
 
         </div>
       </div>
